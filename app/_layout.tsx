@@ -1,16 +1,17 @@
+import React from "react";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import * as React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { PaperProvider } from "react-native-paper";
 
 export default function RootLayout() {
   return (
-    <>
-      <StatusBar style="auto" />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
-    </>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <PaperProvider>
+          <Stack screenOptions={{ headerShown: false }} />
+        </PaperProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }

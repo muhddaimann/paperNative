@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { View } from "react-native";
+import { Text, Button } from "react-native-paper";
 
-export default function AScreen() {
+export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text>Tab A — Home</Text>
+    <View style={{ flex: 1, padding: 24, justifyContent: "center", gap: 12 }}>
+      <Text variant="headlineSmall">Paper is installed ✅</Text>
+      <Button mode="contained" onPress={() => {}}>
+        Tap me
+      </Button>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-});

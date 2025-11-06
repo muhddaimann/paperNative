@@ -7,6 +7,11 @@ import { StatusBar } from "expo-status-bar";
 import { useTheme } from "react-native-paper";
 import { ThemeProvider } from "../contexts/themeContext";
 import { DesignProvider } from "../contexts/designContext";
+import { OverlayProvider } from "../contexts/overlayContext";
+import { AlertDialog } from "../components/molecule/alert";
+import { ConfirmDialog } from "../components/molecule/confirm";
+import { ToastBar } from "../components/molecule/toast";
+import { ModalSheet } from "../components/molecule/modal";
 import {
   useFonts,
   ComicNeue_400Regular,
@@ -38,9 +43,7 @@ export default function RootLayout() {
   });
 
   const onLayoutRootView = React.useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
+    if (fontsLoaded) await SplashScreen.hideAsync();
   }, [fontsLoaded]);
 
   if (!fontsLoaded) return null;
@@ -50,7 +53,14 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <ThemeProvider>
           <DesignProvider>
-            <AppShell />
+            <OverlayProvider
+              AlertUI={AlertDialog}
+              ConfirmUI={ConfirmDialog}
+              ToastUI={ToastBar}
+              ModalUI={ModalSheet}
+            >
+              <AppShell />
+            </OverlayProvider>
           </DesignProvider>
         </ThemeProvider>
       </SafeAreaProvider>

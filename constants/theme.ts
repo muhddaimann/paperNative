@@ -1,4 +1,3 @@
-// constants/theme.ts
 import { MD3DarkTheme, MD3LightTheme, configureFonts, type MD3Theme } from "react-native-paper";
 
 const fontConfig = {

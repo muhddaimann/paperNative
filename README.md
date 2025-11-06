@@ -160,10 +160,134 @@ native/
 ├─ README.md
 └─ tsconfig.json
 
-i want something like this
 
-          <Text
-            style={{ fontSize: tokens.typography.xs, fontWeight: tokens.typography.700 , opacity: 0.6, color: colors.onBackground }}
-          >
-            BLOG
-          </Text>
+native/
+├─ app/
+│  ├─ (tabs)/
+│  │  ├─ a/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ b/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  └─ _layout.tsx
+│  ├─ _layout.tsx
+│  └─ index.tsx
+├─ assets/
+├─ components/
+│  ├─ atom/
+│  │  └─ text.tsx
+│  ├─ molecule/
+│  │  ├─ alert.tsx
+│  │  ├─ bottomSheet.tsx
+│  │  └─ toast.tsx
+│  └─ shared/
+│     └─ header.tsx
+├─ constants/
+│  ├─ design.ts
+│  └─ theme.ts
+├─ contexts/
+│  ├─ overlayContext.tsx
+│  ├─ designContext.tsx
+│  └─ themeContext.tsx
+├─ hooks/
+│  ├─ useOverlay.tsx
+│  ├─ useBlog.tsx
+│  └─ useText.tsx
+├─ .gitignore
+├─ app.json
+├─ expo-env.d.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json
+
+
+native/
+├─ app/
+│  ├─ (tabs)/
+│  │  ├─ a/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ b/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  └─ _layout.tsx
+│  ├─ _layout.tsx
+│  └─ index.tsx
+├─ assets/
+├─ components/
+│  ├─ atom/
+│  │  └─ text.tsx
+│  ├─ molecule/
+│  │  ├─ alert.tsx
+│  │  ├─ modal.tsx
+│  │  └─ toast.tsx
+│  └─ shared/
+│     └─ header.tsx
+├─ constants/
+│  ├─ design.ts
+│  └─ theme.ts
+├─ contexts/
+│  ├─ overlayContext.tsx
+│  ├─ designContext.tsx
+│  └─ themeContext.tsx
+├─ hooks/
+│  ├─ useOverlay.tsx
+│  ├─ useBlog.tsx
+│  └─ useText.tsx
+├─ .gitignore
+├─ app.json
+├─ expo-env.d.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json
+
+
+native/
+├─ app/
+│  ├─ (tabs)/
+│  │  ├─ a/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  ├─ b/
+│  │  │  ├─ _layout.tsx
+│  │  │  └─ index.tsx
+│  │  └─ _layout.tsx
+│  ├─ _layout.tsx
+│  └─ index.tsx
+├─ assets/
+│  ├─ images/
+│  ├─ adaptive-icon.png
+│  ├─ favicon.png
+│  ├─ icon.png
+│  └─ splash-icon.png
+├─ components/
+│  ├─ atom/
+│  │  └─ text.tsx
+│  ├─ molecule/
+│  │  ├─ alert.tsx
+│  │  ├─ confirm.tsx
+│  │  ├─ modal.tsx
+│  │  └─ toast.tsx
+│  └─ shared/
+│     └─ header.tsx
+├─ constants/
+│  ├─ design.ts
+│  └─ theme.ts
+├─ contexts/
+│  ├─ designContext.tsx
+│  ├─ overlayContext.tsx
+│  └─ themeContext.tsx
+├─ hooks/
+│  ├─ useBlog.tsx
+│  ├─ useOverlay.tsx
+│  └─ useText.tsx
+├─ .gitignore
+├─ app.json
+├─ expo-env.d.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json

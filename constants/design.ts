@@ -1,4 +1,3 @@
-// constants/design.ts
 export type Density = "compact" | "comfortable" | "spacious";
 
 export type Spacing = {

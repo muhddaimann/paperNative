@@ -2,20 +2,24 @@ import React from "react";
 import { View, Pressable, Platform } from "react-native";
 import { Button, Text, useTheme, Divider } from "react-native-paper";
 import { useDesign } from "../../contexts/designContext";
-import type { AlertOptions } from "../../contexts/overlayContext";
+import type { ConfirmOptions } from "../../contexts/overlayContext";
 
-export function AlertDialog({
+export function ConfirmDialog({
   visible,
   state,
-  onDismiss,
+  onOk,
+  onCancel,
 }: {
   visible: boolean;
-  state: AlertOptions | null;
-  onDismiss: () => void;
+  state: ConfirmOptions | null;
+  onOk: () => void;
+  onCancel: () => void;
 }) {
   const { colors } = useTheme();
   const { tokens } = useDesign();
   if (!visible || !state) return null;
+
+  const okIsDestructive = state.variant === "error";
 
   return (
     <View
@@ -28,7 +32,7 @@ export function AlertDialog({
       }}
     >
       <Pressable
-        onPress={onDismiss}
+        onPress={onCancel}
         style={{ position: "absolute", inset: 0, backgroundColor: "#00000088" }}
       />
 
@@ -97,12 +101,20 @@ export function AlertDialog({
             style={{
               flexDirection: "row",
               justifyContent: "flex-end",
+              gap: tokens.spacing.xs,
               padding: tokens.spacing.md,
               paddingHorizontal: tokens.spacing.lg,
             }}
           >
-            <Button mode="contained" onPress={onDismiss}>
-              OK
+            <Button mode="text" onPress={onCancel}>
+              {state.cancelText ?? "Cancel"}
+            </Button>
+            <Button
+              mode="contained"
+              onPress={onOk}
+              textColor={okIsDestructive ? colors.error : undefined}
+            >
+              {state.okText ?? "OK"}
             </Button>
           </View>
         </View>
